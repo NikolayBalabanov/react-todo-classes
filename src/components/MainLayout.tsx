@@ -111,7 +111,7 @@ export default class MainLayout extends Component<IMainLayoutProps, IMainLayoutS
           {this.getCurrentTasks().length > 0 ? (
             this.getCurrentTasks()
           ) : (
-            <h2 className="p-10 text-center text-3xl font-semibold text-gray-300">
+            <h2 className="p-10 text-center text-3xl font-semibold dark:text-gray-300">
               {"Hmm, it's empty here... Do you want to add something?"}
             </h2>
           )}
