@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { v1 as uuid } from 'uuid';
 import debounce from 'lodash.debounce';
 import TodoItem from './TodoList/TodoItem';
 import { EStatus, ITask } from '../models/task';
@@ -108,7 +107,15 @@ export default class MainLayout extends Component<IMainLayoutProps, IMainLayoutS
           <SearchInput onChangeInput={this.handleChangeSearch} />
           <ButtonAddTask onModalOpen={this.handleAddModalOpen} />
         </div>
-        <TodoList>{this.getCurrentTasks()}</TodoList>
+        <TodoList>
+          {this.getCurrentTasks().length > 0 ? (
+            this.getCurrentTasks()
+          ) : (
+            <h2 className="p-10 text-center text-3xl font-semibold text-gray-300">
+              {"Hmm, it's empty here... Do you want to add something?"}
+            </h2>
+          )}
+        </TodoList>
         {this.state.isAddModalOpen && (
           <TaskModal onClose={this.handleAddModalClose} onConfirm={this.addTask} />
         )}

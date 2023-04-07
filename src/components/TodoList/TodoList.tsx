@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface ITodoListProps {
-  children: JSX.Element[];
+  children: JSX.Element[] | JSX.Element;
 }
 
 export default function TodoList({ children }: ITodoListProps) {

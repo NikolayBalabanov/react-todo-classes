@@ -50,19 +50,19 @@
   }
 
   .task__modal {
-    @apply flex items-center justify-center overflow-x-hidden overflow-y-auto fixed z-30 inset-0 bg-gray-400 bg-opacity-80 transition-opacity duration-300 dark:bg-gray-700 dark:bg-opacity-80;
+    @apply flex items-center justify-center overflow-x-hidden overflow-y-auto fixed z-30 inset-0 bg-gray-400 bg-opacity-80 transition-opacity duration-300 dark:bg-gray-500 dark:bg-opacity-80;
   }
 
   .task__text-field {
-    @apply w-full pointer-events-auto bg-gray-200 text-lg text-gray-700 border-gray-200 border rounded py-3 px-4 mt-2 mb-3 leading-tight focus:outline-none focus:bg-white dark:text-slate-200 dark:bg-slate-500;
+    @apply w-full pointer-events-auto bg-gray-200 text-lg text-gray-700 placeholder:text-gray-200 border-gray-200 border rounded py-3 px-4 mt-2 mb-3 leading-tight focus:outline-none focus:bg-white dark:text-slate-100 dark:bg-slate-400;
   }
 
   .task__label {
-    @apply block uppercase text-gray-700 text-sm font-semibold mb-2 dark:text-slate-200;
+    @apply block uppercase text-gray-700 text-sm font-semibold mb-2 dark:text-colorGrey;
   }
 
   .task__input {
-    @apply w-full pointer-events-auto bg-gray-200 text-lg text-gray-700 border-gray-200 border rounded py-3 px-4 mt-2 leading-tight focus:outline-none focus:bg-white dark:text-slate-200 dark:bg-slate-500;
+    @apply w-full pointer-events-auto bg-gray-200 text-lg text-gray-700 placeholder:text-gray-200 border-gray-200 border rounded py-3 px-4 mt-2 leading-tight focus:outline-none focus:bg-white dark:text-slate-100 dark:bg-slate-400;
   }
 
   .close-btn {

@@ -32,7 +32,7 @@ export default class SearchInput extends Component<ISearchInputProps, ISearchInp
           value={inputValue}
           className="search__input"
           type="text"
-          placeholder="Поиск пиццы..."
+          placeholder="Search..."
         />
         {inputValue ? <SearchClear onClear={this.handleClearInput} /> : <SearchIncon />}
       </div>

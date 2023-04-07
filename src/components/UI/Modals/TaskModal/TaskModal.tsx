@@ -44,14 +44,14 @@ export default class TaskModal extends Component<ITaskModalProps> {
       <div ref={this.modal} className="task__modal opacity-0">
         <div
           ref={this.modalContent}
-          className="w-10/12 pointer-events-none md:w-6/12 flex flex-col rounded-lg relative z-30 shadow-md bg-white px-6 py-3 -translate-y-10 duration-300 transition-transform dark:bg-gray-300"
+          className="w-10/12 pointer-events-none md:w-6/12 flex flex-col rounded-lg relative z-30 shadow-md bg-white px-6 py-3 -translate-y-10 duration-300 transition-transform dark:bg-gray-600"
         >
           <div className="flex flex-col-reverse justify-between items-center pb-4">
-            <h3 className="text-3xl font-semibold self-start dark:text-colorD3">
+            <h3 className="text-3xl font-semibold self-start dark:text-colorGrey">
               {task ? 'Edit the task' : 'Add a new task'}
             </h3>
             <button
-              className="px-1 pointer-events-auto text-gray-400 text-3xl self-end dark:text-colorD3"
+              className="px-1 pointer-events-auto text-gray-400 text-3xl self-end dark:text-colorGrey hover:text-colorText dark:hover:text-white transition-colors duration-300"
               type="button"
               onClick={() => this.close(onClose)}
             >
@@ -60,7 +60,6 @@ export default class TaskModal extends Component<ITaskModalProps> {
           </div>
           <hr />
           <TaskForm onHandleSubmit={this.handleSetTask} task={task || null} />
-          <hr />
         </div>
       </div>
     );
