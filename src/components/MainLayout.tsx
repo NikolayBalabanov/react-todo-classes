@@ -9,18 +9,6 @@ import Notification from '../components/UI/Modals/Notification';
 import TodoList from './TodoList/TodoList';
 import SearchInput from './UI/SearchInput/SearchInput';
 
-const SomeState: ITask[] = [
-  {
-    id: uuid(),
-    title: 'Hello',
-    descr:
-      'qwerty  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione quia voluptates aliquid velit nulla tenetur voluptatem culpa, alias dolorum explicabo cumque ullam quasi, dolore est doloribus hic cum expedita architecto id nostrum nam sit obcaecati soluta enim. Magnam, eos animi. Earum ea consequatur dolor, debitis in minus rem quos blanditiis!',
-    status: EStatus.active,
-  },
-  { id: uuid(), title: 'Hello2', descr: 'qwerty2', status: EStatus.active },
-  { id: uuid(), title: 'Hello3', descr: 'qwerty3', status: EStatus.active },
-];
-
 interface IMainLayoutState {
   tasks: ITask[];
   searchValue: string;
@@ -39,7 +27,7 @@ export default class MainLayout extends Component<IMainLayoutProps, IMainLayoutS
     super(props);
     const prevState = localStorage.getItem('presistState');
     this.state = {
-      tasks: prevState ? JSON.parse(prevState) : SomeState,
+      tasks: prevState ? JSON.parse(prevState) : [],
       isAddModalOpen: false,
       isNotifyOpen: false,
       searchValue: '',

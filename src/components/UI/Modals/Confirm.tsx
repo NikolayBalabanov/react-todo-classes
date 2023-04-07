@@ -42,11 +42,11 @@ export default class Confirm extends Component<IConfirmProps> {
       >
         <div
           ref={this.modalContent}
-          className="flex flex-col relative rounded-lg shadow-md bg-white md:px-[84px] px-10 py-[25px] -translate-y-10 duration-300 transition-transform"
+          className="flex flex-col relative rounded-lg shadow-md bg-white md:px-[84px] px-10 py-[25px] -translate-y-10 duration-300 transition-transform dark:bg-gray-700"
           onClick={(e) => e.stopPropagation()}
         >
           <div className="flex flex-col-reverse text-center mb-[20px] justify-between items-center">
-            <h2 className="text-2xl font-medium leading-[17px] text-gray-900">
+            <h2 className="text-2xl font-medium leading-[17px] text-gray-900 dark:text-gray-200">
               Remove task - {title}?
             </h2>
           </div>

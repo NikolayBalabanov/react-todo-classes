@@ -48,7 +48,6 @@ export default class TaskForm extends Component<ITaskFormProps, ITaskFormState> 
         };
     onHandleSubmit(submitedTask);
     this.formRef.current!.reset();
-    console.log('сабмит');
   };
 
   private validateTitle = () => {
