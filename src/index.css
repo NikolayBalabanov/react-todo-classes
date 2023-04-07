@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  button,
+  a {
+    outline: none;
+  }
+}
+
+@layer components {
+  .dark-mode {
+    @apply transition-colors duration-500;
+  }
+
+  .root {
+    @apply bg-slate-200 dark:bg-gray-800 dark-mode;
+  }
+  .btn-default {
+    @apply md:px-7 md:py-[15px] px-5 py-2 h-fit flex items-center rounded-lg text-white font-semibold bg-slate-400 hover:bg-slate-700 focus-visible:bg-slate-700;
+  }
+
+  .btn-active {
+    @apply md:px-7 md:py-[15px] px-5 py-2 h-fit flex items-center rounded-lg text-white font-semibold bg-slate-600 hover:bg-slate-700 focus-visible:bg-slate-700;
+  }
+
+  .task__btn {
+    @apply h-fit p-2 text-gray-400 hover:text-gray-600 focus-visible:text-gray-600 transition-colors duration-300 dark:hover:text-gray-200 dark:focus-visible:text-gray-200;
+  }
+
+  .task__btn svg {
+    @apply w-6 h-6 sm:w-10 sm:h-10;
+  }
+
+  .task__done {
+    @apply flex-grow-0 flex-shrink-0 sm:w-16 w-8 cursor-pointer disabled:cursor-not-allowed;
+  }
+
+  .is-short {
+    @apply whitespace-nowrap overflow-hidden text-ellipsis break-words;
+  }
+
+  .btn-confirm {
+    @apply px-6 py-2 bg-black rounded-lg text-white font-medium hover:bg-slate-700 focus-visible:bg-slate-700 transition-colors duration-300 dark:hover:bg-slate-500 dark:focus-visible:bg-slate-500;
+  }
+
+  .btn-reject {
+    @apply px-6 py-2 bg-gray-300 rounded-lg text-black font-medium hover:bg-slate-400 focus:bg-slate-400 transition-colors duration-300;
+  }
+
+  .task__modal {
+    @apply flex items-center justify-center overflow-x-hidden overflow-y-auto fixed z-30 inset-0 bg-gray-400 bg-opacity-80 transition-opacity duration-300 dark:bg-gray-700 dark:bg-opacity-80;
+  }
+
+  .task__text-field {
+    @apply w-full pointer-events-auto bg-gray-200 text-lg text-gray-700 border-gray-200 border rounded py-3 px-4 mt-2 mb-3 leading-tight focus:outline-none focus:bg-white dark:text-slate-200 dark:bg-slate-500;
+  }
+
+  .task__label {
+    @apply block uppercase text-gray-700 text-sm font-semibold mb-2 dark:text-slate-200;
+  }
+
+  .task__input {
+    @apply w-full pointer-events-auto bg-gray-200 text-lg text-gray-700 border-gray-200 border rounded py-3 px-4 mt-2 leading-tight focus:outline-none focus:bg-white dark:text-slate-200 dark:bg-slate-500;
+  }
+
+  .close-btn {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #adadad;
+    width: 17px;
+    height: 17px;
+  }
+
+  .close-btn::after,
+  .close-btn::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+  }
+
+  .close-btn::before {
+    transform: rotate(45deg);
+  }
+
+  .close-btn::after {
+    transform: rotate(-45deg);
+  }
+
+  .search__icon {
+    @apply absolute right-3 top-1/2 w-6 h-6 -translate-y-1/2 opacity-50;
+  }
+
+  .search__input {
+    @apply md:py-3 py-[7px] px-5 pr-8  sm:w-[300px] w-full md:text-xl text-base md:font-medium bg-slate-100 border border-gray-400 hover:border-slate-700 focus-visible:border-slate-700 outline-none transition-colors duration-300 rounded-lg;
+  }
+}
+
+.task-enter {
+  transform: translateX(-200px);
+}
+.task-enter-active {
+  transform: translateX(0px);
+  transition: transform 300ms ease-in;
+}
+.task-exit {
+  opacity: 1;
+}
+.task-exit-active {
+  opacity: 0;
+  transform: translateX(200px);
+  transition: transform 300ms ease-in, opacity 300ms ease-in;
+}
